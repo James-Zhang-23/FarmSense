@@ -46,15 +46,16 @@ def create_suggetion(future_weather, mean_data):
     future_hum = future_weather[1]
 
     # load pre-trained model
-    water_model = pickle.load(open("water_suggest.pickle", "rb"))
-    roof_model = pickle.load(open("roof_suggest.pickle", "rb"))
-
+    water_model = pickle.load(open("water_suggest_ann.pickle", "rb"))
+    roof_model = pickle.load(open("roof_suggest_ann.pickle", "rb"))
+    
     # predict
     test_data = [soil_hum_mean, air_temp_mean, air_hum_mean, future_temp, future_hum]
     water_suggest = water_model.predict([test_data])
     roof_suggest = roof_model.predict([test_data])
-
+    
     return (water_suggest[0], roof_suggest[0])
+
 
 
 if __name__ == "__main__":
