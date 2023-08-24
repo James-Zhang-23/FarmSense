@@ -1,8 +1,8 @@
 import requests, json
 import pickle
-from sklearn.linear_model import LogisticRegression
+from sklearn.neural_network import MLPClassifier
 
-api_key = "9f27246f277709f54e3de00c0aa92397"
+api_key = ""
 
 base_url = "https://api.openweathermap.org/data/2.5/forecast?"
 
